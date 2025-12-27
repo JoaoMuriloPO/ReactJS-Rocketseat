@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rocketseat - reactJS - Fundamentos</title>
+</head>
+
+<body>
+    <div id="root"></div>
+
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+
+        function Counter(){
+
+            const [counter, setCounter] = React.useState(0)
+            const [name, setName] = React.useState("")
+            
+            React.useEffect(()=>{
+                console.log("componente montado")
+
+                return () =>{
+                    console.log("componente desmontado")
+                }
+            },[])
+
+            React.useEffect(()=>{
+                if(counter > 0){
+                console.log(`contador atualizado ${counter}`)
+                }
+                
+            },[counter])
+
+            React.useEffect(()=>{
+                console.log(`contador ou nome atualizados`)
+                
+            },[counter,name])
+
+            return (
+                <>
+
+                <div>
+                    <label>Name:</label>
+                    <input onChange={(e)=> setName(e.target.value)}/>    
+                </div>
+
+                <p>contador: {counter}</p>
+                <button onClick={() => setCounter((prev) => prev + 1)}>acrementar</button>
+                <button onClick={() => setCounter((prev) => prev - 1)}>incrementar</button>
+                <button onClick={() => setCounter(0)}>limpar</button>
+                </>
+            )
+        }
+
+        function App() {
+
+            const [show, setShow] = React.useState(true);
+
+            function handleShow(){
+                setShow(false)
+            }
+            
+            return (
+            <main>
+                <button onClick>Mostra/ocultar contador</button>
+                <hr/>
+                {show && <Counter/>}
+            </main>
+        )
+    }
+        ReactDOM.createRoot(document.getElementById("root")).render(<App />)
+
+    </script>
+
+</body>
+
+</html>
