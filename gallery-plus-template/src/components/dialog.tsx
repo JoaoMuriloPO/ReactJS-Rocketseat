@@ -1,11 +1,11 @@
-import * as DialogPrimivite from '@radix-ui/react-dialog';
-import type React from 'react';
-import Card from './card';
-import cn from 'classnames';
-import Text from './text';
-import ButtonIcon from './button-icon';
-import XIcon from '../assets/icons/x.svg?react';
-import Divider from './divider';
+import * as DialogPrimivite from "@radix-ui/react-dialog";
+import type React from "react";
+import Card from "./card";
+import cn from "classnames";
+import Text from "./text";
+import ButtonIcon from "./button-icon";
+import XIcon from "../assets/icons/x.svg?react";
+import Divider from "./divider";
 
 export const Dialog = DialogPrimivite.Root;
 
@@ -73,7 +73,7 @@ export function DialogHeader({
   children,
   className,
   ...props
-}: React.ComponentProps<'div'>) {
+}: React.ComponentProps<"div">) {
   return (
     <>
       <header
@@ -102,14 +102,14 @@ export function DialogHeader({
 export function DialogBody({
   children,
   ...props
-}: React.ComponentProps<'div'>) {
+}: React.ComponentProps<"div">) {
   return <div {...props}>{children}</div>;
 }
 
 export function DialogFooter({
   children,
   ...props
-}: React.ComponentProps<'div'>) {
+}: React.ComponentProps<"div">) {
   return (
     <div {...props}>
       <Divider className="mt-5 mb-1.5" />

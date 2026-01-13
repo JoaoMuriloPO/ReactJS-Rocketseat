@@ -1,10 +1,10 @@
-import { Link } from 'react-router';
-import Badge from '../../../components/badge';
-import { buttonTextVariants, buttonVariants } from '../../../components/button';
-import ImagePreview from '../../../components/image-preview';
-import Skeleton from '../../../components/skeleton';
-import Text from '../../../components/text';
-import type { Photo } from '../models/photo';
+import { Link } from "react-router";
+import Badge from "../../../components/badge";
+import { buttonTextVariants, buttonVariants } from "../../../components/button";
+import ImagePreview from "../../../components/image-preview";
+import Skeleton from "../../../components/skeleton";
+import Text from "../../../components/text";
+import type { Photo } from "../models/photo";
 
 interface PhotoWidgetProps {
   photo: Photo;
@@ -16,7 +16,7 @@ export default function PhotoWidget({ photo, loading }: PhotoWidgetProps) {
     <div className="flex flex-col gap-4 ">
       {!loading ? (
         <ImagePreview
-          src={`/images/${photo.imageId}`}
+          src={`${import.meta.env.VITE_IMAGES_URL}/${photo.imageId}`}
           title={photo.title}
           imageClassName="w-[10.875rem] h-[10.875rem] rounded-lg"
         />
@@ -59,13 +59,13 @@ export default function PhotoWidget({ photo, loading }: PhotoWidgetProps) {
       {!loading ? (
         <Link
           className={buttonVariants({
-            variant: 'secondary',
-            className: 'px-2 py-2',
+            variant: "secondary",
+            className: "px-2 py-2",
           })}
           to={`/fotos/${photo.id}`}
         >
           <Text
-            className={buttonTextVariants({ variant: 'secondary', size: 'sm' })}
+            className={buttonTextVariants({ variant: "secondary", size: "sm" })}
           >
             Detalhes da imagem
           </Text>

@@ -1,5 +1,5 @@
-import type React from 'react';
-import { tv } from 'tailwind-variants';
+import type React from "react";
+import { tv } from "tailwind-variants";
 
 export const imagePreviewVariants = tv({
   base: `
@@ -13,7 +13,7 @@ export const imagePreviewImageVariants = tv({
   `,
 });
 
-interface ImagePreviewProps extends React.ComponentProps<'img'> {
+interface ImagePreviewProps extends React.ComponentProps<"img"> {
   imageClassName?: string;
 }
 

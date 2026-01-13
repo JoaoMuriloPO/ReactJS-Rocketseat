@@ -1,8 +1,8 @@
-import type React from 'react';
-import { tv } from 'tailwind-variants';
-import ImagePreview from '../../../components/image-preview';
-import { useState } from 'react';
-import InputCheckbox from '../../../components/input-checkbox';
+import type React from "react";
+import { tv } from "tailwind-variants";
+import ImagePreview from "../../../components/image-preview";
+import { useState } from "react";
+import InputCheckbox from "../../../components/input-checkbox";
 
 export const photoImageSelectableVariants = tv({
   base: `
@@ -10,7 +10,7 @@ export const photoImageSelectableVariants = tv({
   `,
   variants: {
     select: {
-      true: 'outline-2 outline-accent-brand',
+      true: "outline-2 outline-accent-brand",
     },
   },
 });
@@ -45,7 +45,7 @@ export default function PhotoImageSelectable({
     >
       <InputCheckbox
         size="sm"
-        checked={isSelected}
+        defaultChecked={isSelected}
         onChange={handleSelect}
         className="absolute top-1 left-1"
       />

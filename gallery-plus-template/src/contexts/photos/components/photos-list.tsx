@@ -1,7 +1,7 @@
-import Skeleton from '../../../components/skeleton';
-import Text from '../../../components/text';
-import type { Photo } from '../models/photo';
-import PhotoWidget from './photo-widget';
+import Skeleton from "../../../components/skeleton";
+import Text from "../../../components/text";
+import type { Photo } from "../models/photo";
+import PhotoWidget from "./photo-widget";
 
 interface PhotosListProps {
   photos: Photo[];
@@ -16,7 +16,7 @@ export default function PhotosList({ photos, loading }: PhotosListProps) {
         variant="paragraph-large"
         className="flex items-center justify-end gap-1 text-accent-span"
       >
-        Total:{' '}
+        Total:{" "}
         {!loading ? (
           <div>{photos.length}</div>
         ) : (

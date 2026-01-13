@@ -1,10 +1,10 @@
-import { tv, type VariantProps } from 'tailwind-variants';
-import Icon from './icon';
-import Text from './text';
-import type { ComponentProps, ReactNode } from 'react';
+import { tv, type VariantProps } from "tailwind-variants";
+import Icon from "./icon";
+import Text from "./text";
+import type { ComponentProps, ReactNode } from "react";
 
 export const inputTextContainerVariants = tv({
-  base: 'flex flex-col gap-1',
+  base: "flex flex-col gap-1",
 });
 
 export const inputTextWrapperVariants = tv({
@@ -15,14 +15,14 @@ export const inputTextWrapperVariants = tv({
   `,
   variants: {
     size: {
-      md: 'h-10 p-3',
+      md: "h-10 p-3",
     },
     disabled: {
-      true: 'pointer-events-none',
+      true: "pointer-events-none",
     },
   },
   defaultVariants: {
-    size: 'md',
+    size: "md",
     disabled: false,
   },
 });
@@ -35,21 +35,21 @@ export const inputTextVariants = tv({
 });
 
 export const inputTextIconVariants = tv({
-  base: 'fill-placeholder',
+  base: "fill-placeholder",
   variants: {
     size: {
-      md: 'w-6 h-6',
+      md: "w-6 h-6",
     },
   },
   defaultVariants: {
-    size: 'md',
+    size: "md",
   },
 });
 
 interface InputTextProps
   extends VariantProps<typeof inputTextWrapperVariants>,
-    Omit<ComponentProps<'input'>, 'size' | 'disabled'> {
-  icon?: ComponentProps<typeof Icon>['svg'];
+    Omit<ComponentProps<"input">, "size" | "disabled"> {
+  icon?: ComponentProps<typeof Icon>["svg"];
   error?: ReactNode;
 }
 
